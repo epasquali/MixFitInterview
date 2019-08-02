@@ -1,0 +1,27 @@
+%h1 Listing postman_users
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Email
+      %th Height
+      %th Weight
+      %th
+      %th
+      %th
+
+  %tbody
+    - @postman_users.each do |postman_user|
+      %tr
+        %td= postman_user.name
+        %td= postman_user.email
+        %td= postman_user.height
+        %td= postman_user.weight
+        %td= link_to 'Show', postman_user
+        %td= link_to 'Edit', edit_postman_user_path(postman_user)
+        %td= link_to 'Destroy', postman_user, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Postman user', new_postman_user_path

@@ -1,0 +1,2 @@
+class PostmanUser < ApplicationRecord
+end
