@@ -17,7 +17,7 @@ class PostmanUsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create postman_user" do
     assert_difference('PostmanUser.count') do
-      post postman_users_url, params: { postman_user: { email: @postman_user.email, height: @postman_user.height, name: @postman_user.name, weight: @postman_user.weight } }
+      post postman_users_url, params: { postman_user: { email: 'three@example.com', height: 150.3, name: 'User Three', weight: 56 } }
     end
 
     assert_redirected_to postman_user_url(PostmanUser.last)

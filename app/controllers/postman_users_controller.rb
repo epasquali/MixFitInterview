@@ -22,7 +22,6 @@ class PostmanUsersController < ApplicationController
   # POST /postman_users
   def create
     @postman_user = PostmanUser.new(postman_user_params)
-
     if @postman_user.save
       flash[:success] = 'Postman user was sucessfully created'
       redirect_to @postman_user
