@@ -1,18 +1,36 @@
-%p#notice= notice
+%h4.text-center.my-5 User Dashboard
 
-%p
-  %b Name:
-  = @postman_user.name
-%p
-  %b Email:
-  = @postman_user.email
-%p
-  %b Height:
-  = @postman_user.height
-%p
-  %b Weight:
-  = @postman_user.weight
+.row
+  .col-4
+    .card
+      .card-header.bg-purple.mb-0
+        %h5.card-title.text-center.text-white
+          My Profile
+            
+      .card-body
+        %p
+          %b Name:
+          = @postman_user.name
+        %p
+          %b Email:
+          = @postman_user.email
+        %p
+          %b Height:
+          = @postman_user.height
+        %p
+          %b Weight:
+          = @postman_user.weight
 
-= link_to 'Edit', edit_postman_user_path(@postman_user)
-\|
-= link_to 'Back', postman_users_path
+        .text-center
+          = link_to 'Edit', edit_postman_user_path(@postman_user)
+
+  .col-8
+    .card
+      .card-header.bg-purple
+        %h5.card-title.text-center.text-white
+          My Recipes
+      .card-body
+        Recipes go here
+
+.text-center.mt-5
+  = link_to 'Back', postman_users_path

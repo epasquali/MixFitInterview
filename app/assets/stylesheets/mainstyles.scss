@@ -1,6 +1,25 @@
 @import "bootstrap";
 
 
+.bg-purple
+{
+    background-color: #aa22aabb;
+    background-color: #8d1d8dbb;
+}
+
+.bg-green
+{
+  background-color: #1d8d7ebb;  
+  background-color: #2ad1bbbb;
+}
+
+
+.bg-teal
+{
+  background-color: #1d808dbb;  
+  background-color: #2ac6d1bb;
+}
+
 
 /******************************************************************************
 *Forms
@@ -12,7 +31,16 @@
   margin: 20px auto;
   margin-top: 50px !important;
   background-color: #fff;
-  padding: 20px 40px 40px 40px;
+  padding: 20px 40px 20px 40px;
   border: 1px solid #eeefef;
   border-radius: 3px;
+}
+
+/******************************************************************************
+* Cards
+******************************************************************************/
+
+.card-title
+{
+  margin-bottom: 0px !important;
 }

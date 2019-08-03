@@ -1,6 +1,6 @@
-%h1 Listing postman_users
+%h1.text-center.my-5 Postman User Index
 
-%table
+%table.table.mb-5
   %thead
     %tr
       %th Name
@@ -24,4 +24,5 @@
 
 %br
 
-= link_to 'New Postman user', new_postman_user_path
+.text-center
+  = link_to 'Create New Postman User', new_postman_user_path, class: 'btn btn-success'

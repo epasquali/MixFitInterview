@@ -1,7 +1,10 @@
-%h1 Editing postman_user
+%h1.text-center.my-5 Edit Postman User
 
-= render 'form'
+.form-wrapper
+  = render 'form'
 
-= link_to 'Show', @postman_user
-\|
-= link_to 'Back', postman_users_path
+
+.text-center
+  = link_to 'Show', @postman_user
+  \|
+  = link_to 'Back', postman_users_path
