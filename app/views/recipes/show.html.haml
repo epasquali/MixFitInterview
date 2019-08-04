@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b IntakeVitC:
+  = @recipe.IntakeVitC
+%p
+  %b IntakeVitD3:
+  = @recipe.IntakeVitD3
+%p
+  %b Intakeiron:
+  = @recipe.IntakeIron
+%p
+  %b ActivityVitC:
+  = @recipe.ActivityVitC
+%p
+  %b ActivityVitD3:
+  = @recipe.ActivityVitD3
+%p
+  %b ActivityIron:
+  = @recipe.ActivityIron
+%p
+  %b Postmanuser:
+  = @recipe.postman_user_id
+
+= link_to 'Edit', edit_recipe_path(@recipe)
+\|
+= link_to 'Back', recipes_path

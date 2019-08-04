@@ -1,0 +1,31 @@
+= form_for @recipe do |f|
+  - if @recipe.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@recipe.errors.count, "error")} prohibited this recipe from being saved:"
+      %ul
+        - @recipe.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :IntakeVitC
+    = f.number_field :IntakeVitC
+  .field
+    = f.label :IntakeVitD3
+    = f.number_field :IntakeVitD3
+  .field
+    = f.label :IntakeIron
+    = f.number_field :IntakeIron
+  .field
+    = f.label :ActivityVitC
+    = f.number_field :ActivityVitC
+  .field
+    = f.label :ActivityVitD3
+    = f.number_field :ActivityVitD3
+  .field
+    = f.label :ActivityIron
+    = f.number_field :ActivityIron
+  .field
+    = f.label :postman_user_id
+    = f.text_field :postman_user_id
+  .actions
+    = f.submit 'Save'

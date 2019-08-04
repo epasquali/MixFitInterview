@@ -1,0 +1,33 @@
+%h1 Listing recipes
+
+%table
+  %thead
+    %tr
+      %th Intakevitc
+      %th Intakevitd3
+      %th Intakeiron
+      %th Activityvitc
+      %th Activityvitd3
+      %th Activityiron
+      %th Postmanuser
+      %th
+      %th
+      %th
+
+  %tbody
+    - @recipes.each do |recipe|
+      %tr
+        %td= recipe.IntakeVitC
+        %td= recipe.IntakeVitD3
+        %td= recipe.IntakeIron
+        %td= recipe.ActivityVitC
+        %td= recipe.ActivityVitD3
+        %td= recipe.ActivityIron
+        %td= recipe.postman_user_id
+        %td= link_to 'Show', recipe
+        %td= link_to 'Edit', edit_recipe_path(recipe)
+        %td= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Recipe', new_recipe_path

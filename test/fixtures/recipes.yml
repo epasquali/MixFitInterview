@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  IntakeVitC: 6
+  IntakeVitD3: 7
+  IntakeIron: 8
+  ActivityVitC: 3
+  ActivityVitD3: 2
+  ActivityIron: 1
+  postman_user_id: 1
+
+two:
+  IntakeVitC: 7
+  IntakeVitD3: 6
+  IntakeIron: 7
+  ActivityVitC: 3
+  ActivityVitD3: 2
+  ActivityIron: 1
+  postman_user_id: 2

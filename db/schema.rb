@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_02_203543) do
+ActiveRecord::Schema.define(version: 2019_08_04_000444) do
 
   create_table "postman_users", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,20 @@ ActiveRecord::Schema.define(version: 2019_08_02_203543) do
     t.decimal "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.integer "IntakeVitC"
+    t.integer "IntakeVitD3"
+    t.integer "IntakeIron"
+    t.integer "ActivityVitC"
+    t.integer "ActivityVitD3"
+    t.integer "ActivityIron"
+    t.integer "postman_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["postman_user_id", "created_at"], name: "index_recipes_on_postman_user_id_and_created_at"
+    t.index ["postman_user_id"], name: "index_recipes_on_postman_user_id"
   end
 
 end
