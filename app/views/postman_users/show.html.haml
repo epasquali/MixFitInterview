@@ -30,7 +30,13 @@
         %h5.card-title.text-center.text-white
           My Recipes
       .card-body
-        Recipes go here
+        -if @postman_user.recipes.any?
+          = render 'recipes/recipetable'
+        -else
+          You have not yet created any recipes.
+        .text-center.mt-5
+          = link_to 'Create New Recipe', new_recipe_path, class: 'btn btn-primary'
+
 
 .text-center.mt-5
-  = link_to 'Back', postman_users_path
+  = link_to 'Back', request.referer.present? ? request.referer : postman_users_path

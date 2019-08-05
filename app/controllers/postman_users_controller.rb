@@ -8,6 +8,8 @@ class PostmanUsersController < ApplicationController
 
   # GET /postman_users/1
   def show
+    @postman_user = PostmanUser.find(params[:id])
+    @recipes = @postman_user.recipes
   end
 
   # GET /postman_users/new

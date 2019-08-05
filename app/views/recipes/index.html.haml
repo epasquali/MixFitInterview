@@ -1,15 +1,15 @@
-%h1 Listing recipes
+%h1.text-center.my-5 Recipe Index
 
-%table
+%table.table.mb-5
   %thead
     %tr
-      %th Intakevitc
-      %th Intakevitd3
-      %th Intakeiron
-      %th Activityvitc
-      %th Activityvitd3
-      %th Activityiron
-      %th Postmanuser
+      %th User ID
+      %th IntakeVitC
+      %th IntakeVitD3
+      %th IntakeIron
+      %th ActivityVitC
+      %th ActivityVitD3
+      %th ActivityIron
       %th
       %th
       %th
@@ -17,17 +17,18 @@
   %tbody
     - @recipes.each do |recipe|
       %tr
+        %td= recipe.postman_user_id
         %td= recipe.IntakeVitC
         %td= recipe.IntakeVitD3
         %td= recipe.IntakeIron
         %td= recipe.ActivityVitC
         %td= recipe.ActivityVitD3
         %td= recipe.ActivityIron
-        %td= recipe.postman_user_id
         %td= link_to 'Show', recipe
         %td= link_to 'Edit', edit_recipe_path(recipe)
         %td= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Recipe', new_recipe_path
+.text-center
+  = link_to 'Create New Recipe', new_recipe_path, class: 'btn btn-success'

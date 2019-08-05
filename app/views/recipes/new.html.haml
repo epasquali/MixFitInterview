@@ -1,5 +1,7 @@
-%h1 New recipe
+%h1.text-center.my-5 Create New Recipe
 
-= render 'form'
+.form-wrapper
+  = render 'form', buttoncaption: "Create Recipe"
 
-= link_to 'Back', recipes_path
+.text-center
+  = link_to 'Back', request.referer.present? ? request.referer : recipes_path

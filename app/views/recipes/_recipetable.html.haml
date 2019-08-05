@@ -1,0 +1,26 @@
+%table.table.mb-5
+  %thead
+    %tr
+      %th Recipe ID
+      %th Date Created
+      %th Vitamin C
+      %th Vitamin D3
+      %th Iron
+      %th
+      %th
+      %th
+  %tbody
+    - @recipes.each do |recipe|
+      %tr
+        %td= recipe.id
+        %td= recipe.created_at
+        %td 
+          = 10 - (recipe.IntakeVitC - recipe.ActivityVitC)
+        %td 
+          = 10 - (recipe.IntakeVitD3 - recipe.ActivityVitD3)
+        %td 
+          = 10 - (recipe.IntakeIron - recipe.ActivityIron)
+        %td
+          =link_to 'View', recipe
+        %td 
+          =link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?' }

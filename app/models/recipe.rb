@@ -1,5 +1,6 @@
 class Recipe < ApplicationRecord
   belongs_to :postman_user
+  #default_scope -> { order(created_at: :desc) }
 
   validates :postman_user_id, presence:true
 

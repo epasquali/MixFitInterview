@@ -1,7 +1,12 @@
-%h1 Editing recipe
+%h1.text-center.my-5 
+  Edit Recipe ID: 
+  =@recipe.id
 
-= render 'form'
+.form-wrapper
+  = render 'form', buttoncaption: 'Save'
 
-= link_to 'Show', @recipe
-\|
-= link_to 'Back', recipes_path
+
+.text-center
+  = link_to 'Show', @recipe
+  \|
+  = link_to 'Back', request.referer.present? ? request.referer : recipes_path

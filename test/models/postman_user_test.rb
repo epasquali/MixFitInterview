@@ -56,6 +56,14 @@ class PostmanUserTest < ActiveSupport::TestCase
     assert_not @postman_user.valid?
   end
 
+  test "associated recipes should be destroyed" do
+    @postman_user.save
+    @postman_user.recipes.create!(IntakeVitC: 10, IntakeVitD3: 8, IntakeIron: 7, ActivityVitC: 3, ActivityVitD3: 2, ActivityIron: 1)
+    assert_difference 'Recipe.count', -1 do
+      @postman_user.destroy
+    end
+  end
+
 
 
  

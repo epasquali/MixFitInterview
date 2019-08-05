@@ -17,3 +17,13 @@ two:
   ActivityVitD3: 2
   ActivityIron: 1
   postman_user_id: 2
+
+most_recent: 
+  IntakeVitC: 7
+  IntakeVitD3: 10
+  IntakeIron: 6
+  ActivityVitC: 2
+  ActivityVitD3: 2
+  ActivityIron: 2
+  postman_user_id: 1
+  created_at: <%= Time.zone.now %>

@@ -4,4 +4,4 @@
   = render 'form'
 
 .text-center
-  = link_to 'Back', postman_users_path
+  = link_to 'Back', request.referer.present? ? request.referer : postman_users_path

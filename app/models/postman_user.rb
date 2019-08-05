@@ -1,6 +1,7 @@
 class PostmanUser < ApplicationRecord
 
     has_many :recipes, dependent: :destroy
+    
 
     before_save {email.downcase!}
 

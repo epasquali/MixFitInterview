@@ -25,4 +25,4 @@
 %br
 
 .text-center
-  = link_to 'Create New Postman User', new_postman_user_path, class: 'btn btn-success'
+  = link_to 'Create New Postman User', request.referer.present? ? request.referer : new_postman_user_path, class: 'btn btn-success'

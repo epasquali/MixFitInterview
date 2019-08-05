@@ -1,27 +1,54 @@
-%p#notice= notice
+.card.mt-5
+  .card-header.bg-purple.mb-0
+    %h5.card-title.text-center.text-white
+      Recipe ID: 
+      = @recipe.id
+            
+  .card-body
+    %table.table-bordered.mb-5
+      %thead
+        %tr
+          %th User ID
+          %th Date Created
+          %th.bg-lightgreen Intake Vitamin C
+          %th.bg-lightgreen Intake Vitamin D3
+          %th.bg-lightgreen Intake Iron
+          %th.bg-lightred Activity Vitamin C
+          %th.bg-lightred Activity Vitamin D3
+          %th.bg-lightred Activity Iron
+          %th.bg-lightblue Computed Vitamin C
+          %th.bg-lightblue Computed Vitamin D3
+          %th.bg-lightblue Computed Iron
+      %tbody
+        %tr
+          %td 
+            =@recipe.postman_user_id
+          %td 
+            =@recipe.created_at
+          %td.text-center
+            =@recipe.IntakeVitC
+          %td.text-center
+            =@recipe.IntakeVitD3
+          %td.text-center
+            =@recipe.IntakeIron
+        
+          %td.text-center
+            =@recipe.ActivityVitC
+          %td.text-center
+            =@recipe.ActivityVitD3
+          %td.text-center
+            =@recipe.ActivityIron
 
-%p
-  %b IntakeVitC:
-  = @recipe.IntakeVitC
-%p
-  %b IntakeVitD3:
-  = @recipe.IntakeVitD3
-%p
-  %b Intakeiron:
-  = @recipe.IntakeIron
-%p
-  %b ActivityVitC:
-  = @recipe.ActivityVitC
-%p
-  %b ActivityVitD3:
-  = @recipe.ActivityVitD3
-%p
-  %b ActivityIron:
-  = @recipe.ActivityIron
-%p
-  %b Postmanuser:
-  = @recipe.postman_user_id
+          %td.text-center
+            = 10 - (@recipe.IntakeVitC - @recipe.ActivityVitC)
+          %td.text-center 
+            = 10 - (@recipe.IntakeVitD3 - @recipe.ActivityVitD3)
+          %td.text-center 
+            = 10 - (@recipe.IntakeIron - @recipe.ActivityIron)
 
-= link_to 'Edit', edit_recipe_path(@recipe)
-\|
-= link_to 'Back', recipes_path
+
+
+.text-center 
+  = link_to 'Edit', edit_recipe_path(@recipe)
+  \|
+  = link_to 'Back', request.referer.present? ? request.referer : recipes_path 
