@@ -1,6 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  #Keep Heroku happy. This is so it can find the background images.
+  config.serve_static_assets = true
+  config.assets.compile = true
+
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
