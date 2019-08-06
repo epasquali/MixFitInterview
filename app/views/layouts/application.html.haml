@@ -1,4 +1,6 @@
 = render 'layouts/stdheader'
+= render 'layouts/navbarlinks'
+= render 'layouts/navbar'
   
 
 .container-fluid
@@ -11,3 +13,6 @@
           &times;
 
   = yield
+
+.mt-5
+  = render 'layouts/footer'

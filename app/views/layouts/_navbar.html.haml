@@ -1,0 +1,7 @@
+%header
+  %nav.top.navbar.navbar-dark.navbar-expand-md.bg-teal.py-1
+    = link_to image_tag('mixfitlogo.webp', size: '75x75', alt: "MixFit Logo", class: 'navbar-brand'), root_path
+    %ul.navbar-nav.ml-auto
+      = yield :navlinks
+
+

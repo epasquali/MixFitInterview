@@ -22,43 +22,35 @@ class RecipesController < ApplicationController
   end
 
   # POST /recipes
-  # POST /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
 
-    respond_to do |format|
-      if @recipe.save
-        format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
-        format.json { render :show, status: :created, location: @recipe }
-      else
-        format.html { render :new }
-        format.json { render json: @recipe.errors, status: :unprocessable_entity }
-      end
+    if @recipe.save
+      flash[:success] = 'Recipe was successfully created.'
+      redirect_to @recipe
+    else
+      render :new
     end
+
   end
 
   # PATCH/PUT /recipes/1
-  # PATCH/PUT /recipes/1.json
   def update
-    respond_to do |format|
-      if @recipe.update(recipe_params)
-        format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
-        format.json { render :show, status: :ok, location: @recipe }
-      else
-        format.html { render :edit }
-        format.json { render json: @recipe.errors, status: :unprocessable_entity }
-      end
+    if @recipe.update(recipe_params)
+      flash[:success] = 'Recipe was successfully updated.'
+      redirect_to @recipe
+    else
+      render :edit
     end
+  
   end
 
-  # DELETE /recipes/1
-  # DELETE /recipes/1.json
+  # DELETE /recipes/
   def destroy
     @recipe.destroy
-    respond_to do |format|
-      format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:success] = 'Recipe destroyed!'
+    redirect_to recipes_url
+  
   end
 
   private

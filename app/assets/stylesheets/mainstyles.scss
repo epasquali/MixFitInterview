@@ -1,22 +1,22 @@
 @import "bootstrap";
 
+/******************************************************************************
+* Background colors
+*******************************************************************************/
 
 .bg-purple
 {
-    background-color: #aa22aabb;
     background-color: #8d1d8dbb;
 }
 
 .bg-green
 {
-  background-color: #1d8d7ebb;  
   background-color: #2ad1bbbb;
 }
 
 
 .bg-teal
-{
-  background-color: #1d808dbb;  
+{  
   background-color: #2ac6d1bb;
 }
 
@@ -35,6 +35,57 @@
   background-color: #96cfe9bb;
 }
 
+/******************************************************************************
+* Pages
+*******************************************************************************/
+
+.page-wrapper 
+{
+  width: 95%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px 40px 40px 40px;
+  text-align: justify;
+}
+
+.page-header 
+{
+  border-bottom: 1px solid #eee;
+  margin-bottom: 40px;
+}
+
+/****************************************************************************
+*The Jumbotron
+****************************************************************************/
+.container-fluid > .jumbotron-fluid
+{
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.jumbotron-fluid.picture
+{
+  margin-top: 2px;
+  margin-bottom: -46px;
+  background-image: url('swim.jpg');
+  background-size: cover;
+  height: 550px;
+  padding-top: 70px;
+  color: #fff;
+}
+
+hr
+{
+  border-color: #eeeeee;
+}
+
+/******************************************************************************
+* Navbar
+*******************************************************************************/
+.navbar-dark .navbar-nav .nav-link
+{
+  color: white;
+}
 
 /******************************************************************************
 *Forms

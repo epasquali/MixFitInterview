@@ -1,0 +1,32 @@
+.page-wrapper
+  %h4.box-title.text-center.pb-3.page-header
+    Help
+  
+  %p.font-weight-bold
+    Using the website:
+
+  %p
+    To create a new user, click on the 
+    =link_to "register", new_postman_user_path
+    page and enter your name, email address, height, and weight.
+ 
+  %p
+    Upon registration, you will be taken to your user dashboard, where you can view and
+    edit your user details as well as view and edit your past recipes and create new recipes.
+
+  %p
+    For already registered users, you can go to the
+    =link_to "login page", login_path
+    and enter your email address to "log-in" to your user dashboard.
+
+
+  %p
+    To create a recipe, you need to provide your user ID on the form. The user id is the number that appears
+    at the end of your user dashboard URL.
+
+  %p
+    You can also view the
+    =link_to "full user index", postman_users_path
+    and the
+    =link_to "full recipe index", recipes_path
+    for a kind of full-level 'admin' view.
