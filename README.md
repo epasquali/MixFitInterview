@@ -30,11 +30,16 @@ Example: if I have:
 
 the output should show:
 Vitamin C 8 (current level is 5-3 = 2)
+
 Vitamin D3 5 (current level is 7-2 = 5)
 Iron 7 (current level is 4-1 = 3)
 
 You don't have to design front end code, or provide authentication. Let's assume people identify themselves with a username, no password, no access restrictions etc. basically as simple as needed.
 
 The code can be hosted in a Github or bitbucket repo as you prefer.
+
+# View Demo:
+A running demo of the full code detailed here can be found at:
+https://elisamixfitinterview.herokuapp.com/
 
  
